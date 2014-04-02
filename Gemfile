@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'fandango'
+gem 'google_movies47'
+
+gem 'geokit'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 

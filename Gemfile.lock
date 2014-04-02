@@ -28,6 +28,8 @@ GEM
     arel (4.0.2)
     atomic (1.1.16)
     builder (3.1.4)
+    chronic_duration (0.10.4)
+      numerizer (~> 0.1.1)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -35,11 +37,19 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    domain_name (0.5.18)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.0.2)
-    fandango (1.0.0)
-      nokogiri (~> 1.0)
+    geokit (1.8.4)
+      multi_json (>= 1.3.2)
+    google_movies47 (0.2.5)
+      chronic_duration
+      mechanize
+      nokogiri
     hike (1.2.3)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -51,12 +61,25 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mechanize (2.7.2)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0.0)
+      mime-types (~> 1.17, >= 1.17.2)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.4)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (4.7.5)
     multi_json (1.9.2)
+    net-http-digest_auth (1.4)
+    net-http-persistent (2.9.4)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    ntlm-http (0.1.1)
+    numerizer (0.1.1)
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -109,13 +132,18 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.3)
+      unf_ext
+    unf_ext (0.0.6)
+    webrobots (0.1.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  fandango
+  geokit
+  google_movies47
   jbuilder (~> 1.2)
   jquery-rails
   pg

@@ -1,4 +1,8 @@
 Yeldango::Application.routes.draw do
+
+  root "homes#show"
+
+  resource :suggestion, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
