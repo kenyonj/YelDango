@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
 
-  def get_events(city, state)
+  # validates :event_name, uniqueness: { scope: [:event_location, :event_time] }
+
+  def self.get_events(city, state)
     movieShowTimes = GoogleMovies47::Crawler.new(
       city: city,
       state: state
