@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
-gem 'google_movies47'
-gem 'geokit'
 
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'google_movies47'
+gem 'geokit'
 gem 'yelpster'
+
 gem 'rails', '4.0.4'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.2'
