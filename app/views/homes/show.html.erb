@@ -1,6 +1,5 @@
-Enter a Zip
-
-<%= form_for(:user_location, url: suggestion_path) do |form| %>
+Enter in your location:
+<%= form_for(:user_location, url: guest_path) do |form| %>
   <%= form.text_field :city %>
   <%= form.text_field :state %>
   <%= form.submit "Submit" %>
