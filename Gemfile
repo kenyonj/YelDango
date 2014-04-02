@@ -3,6 +3,8 @@ gem 'google_movies47'
 gem 'geokit'
 
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'yelpster'
+gem 'geokit'
 gem 'rails', '4.0.4'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.2'
@@ -11,7 +13,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'yelpster'
 
 group :doc do
   gem 'sdoc', require: false
