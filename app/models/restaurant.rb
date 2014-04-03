@@ -24,10 +24,11 @@ class Restaurant < ActiveRecord::Base
 
   def parse_yelp_profiles(yelp_profiles)
     businesses = yelp_profiles["businesses"]
-    business_names = []
+    restaurants = []
     businesses.each do |business|
-      business_names << business["name"]
+      rest = Restaurant.new(business["name"])
+      restaurants << rest
     end
-    business_names
+    restaurants
   end
 end
