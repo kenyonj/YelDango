@@ -4,7 +4,6 @@ gem 'geokit'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'yelpster'
-gem 'geokit'
 gem 'rails', '4.0.4'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.2'
