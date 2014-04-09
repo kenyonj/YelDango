@@ -3,13 +3,12 @@ class Restaurant < ActiveRecord::Base
    has_many :suggestions
 
 
-   def get_restaurants(city,state, term='dinner')
+   def self.get_restaurants(city,state, term='dinner')
      yelp_profiles = yelp_request(city, state, term='dinner')
-     restaurants = parse_yelp_profiles(yelp_profiles)
-     restaurants.sample
+     parse_yelp_profiles(yelp_profiles)
    end
   
-  def yelp_request(city,state,term='dinner')
+  def self.yelp_request(city,state,term='dinner')
     client = Yelp::Client.new
      request = Location.new(
        :compress_response => false,
@@ -22,11 +21,11 @@ class Restaurant < ActiveRecord::Base
      response = client.search(request)
   end
 
-  def parse_yelp_profiles(yelp_profiles)
+  def self.parse_yelp_profiles(yelp_profiles)
     businesses = yelp_profiles["businesses"]
     restaurants = []
     businesses.each do |business|
-      rest = Restaurant.new(business["name"])
+      rest = Restaurant.new(name: business["name"], rating: business["avg_rating"])
       restaurants << rest
     end
     restaurants

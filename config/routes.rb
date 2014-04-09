@@ -1,5 +1,7 @@
 Yeldango::Application.routes.draw do
   root "homes#show"
-  resource :suggestion, only: [:new, :create]
+  resources :suggestions, only: [:new, :create, :edit, :update]
   resource :guest, only: [:create]
+
+
 end

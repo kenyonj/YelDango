@@ -1,4 +1,13 @@
-Hello, your event suggestion is:
-<%= @suggestion.event_name %> at 
-<%= @suggestion.event_time %> located at 
-<%= @suggestion.event_location %>
+<div>
+  Hello, your event suggestion is:
+  <%= @event.name %> at 
+  <%= @event.time %> located at 
+  <%= @event.location %>
+
+  <br>
+  And your dinner suggestion is: 
+  <%= @restaurant.name %> with a Yelp rating of <%= @restaurant.rating %>
+
+  Do you want to book this suggestions? <%= link_to "Yes!", root_path %> or <%= "Get Another Suggestion", root_path %>
+
+</div>

@@ -1,0 +1,21 @@
+<div>
+  Hello, your event suggestion is:
+  <%= @event.name %> at 
+  <%= @event.time %> located at 
+  <%= @event.location %>
+
+  <br>
+  And your dinner suggestion is: 
+  <%= @restaurant.name %> with a Yelp rating of <%= @restaurant.rating.to_f %>
+
+  <br>
+  Do you want to book this suggestions? <br>
+  <%= form_for @suggestion do |f| %>
+    <%= f.label "Yes" %>
+    <%= f.radio_button :response, true, checked: true %>
+    <%= f.label "No, Show Me Another" %>
+    <%= f.radio_button :response, false, checked: false %>
+    <%= f.submit "Submit" %>
+  <% end %>
+
+</div>
