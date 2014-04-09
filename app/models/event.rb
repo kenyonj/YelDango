@@ -21,7 +21,6 @@ class Event < ActiveRecord::Base
         end
       end
     end
-    binding.pry
     events
   end
 
