@@ -3,11 +3,10 @@ class SuggestionsController < ApplicationController
   def new
     city = session[:city]
     state = session[:state]
-    events = Event.get_events(city, state)
-    restaurants = Restaurant.get_restaurants(city, state)
-    @event = events.sample
-    @restaurant = restaurants.sample
-    @suggestion = Suggestion.create(event: @event, restaurant: @restaurant)
+    @events = Event.get_events(city, state)
+    @restaurants = Restaurant.get_restaurants(city, state)
+    @suggestion = Suggestion.new
+    ajsdflasdf.asdf
   end
 
   def update
