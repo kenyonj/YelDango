@@ -1,5 +1,7 @@
 <div id="<%= dom_id(suggestion_form) %>" class="suggestion-form">
-  <%= suggestion_form.event.name %>  <%= suggestion_form.restaurant.name %>
+  Movie: <%= suggestion_form.event.name %> @ <%= suggestion_form.event.time %><br> 
+  Theater: <%= suggestion_form.event.location %><br>
+  Restaurant: <%= suggestion_form.restaurant.name %>
   <%= form_for suggestion_form, remote: true do |f| %>
     <%= f.hidden_field :event_name, value: suggestion_form.event.name %>
     <%= f.hidden_field :event_location, value: suggestion_form.event.location %>

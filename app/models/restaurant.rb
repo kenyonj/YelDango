@@ -6,11 +6,11 @@ class Restaurant < ActiveRecord::Base
    validates :rating, presence: true
 
    def self.get_restaurants(city,state, term='dinner')
-     result = []
-     10.times { |num| result << new(name: "RESTAURANT#{num}", rating: 4.0 ) }
-     result
-     # yelp_profiles = yelp_request(city, state, term='dinner')
-     # parse_yelp_profiles(yelp_profiles)
+     # result = []
+     # 10.times { |num| result << new(name: "RESTAURANT#{num}", rating: 4.0 ) }
+     # result
+     yelp_profiles = yelp_request(city, state, term='dinner')
+     parse_yelp_profiles(yelp_profiles)
    end
   
   def self.yelp_request(city,state,term='dinner')
@@ -21,7 +21,7 @@ class Restaurant < ActiveRecord::Base
                  :state => state,
                  :radius => 2,
                  :term => term,
-                 :limit => 5
+                 :limit => 15
      )
      response = client.search(request)
   end

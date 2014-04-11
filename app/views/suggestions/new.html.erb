@@ -1,17 +1,4 @@
 <div>
-  Hello, your event suggestion is:
-  <%= @event.name %> at
-  <%= @event.time %> located at
-  <%= @event.location %>
-
-  <br>
-  And your dinner suggestion is:
-  <%= @restaurant.name %> with a Yelp rating of <%= @restaurant.rating.to_f %>
-
-  <br>
-  Do you want to book this suggestions? <br>
-
-  <button class="toggleThis">button to toggle</button>
   <%= render @suggestion_forms %>
 
 </div>
