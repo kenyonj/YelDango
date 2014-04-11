@@ -8,7 +8,7 @@ class SuggestionsController < ApplicationController
     @event = events.sample
     @restaurant = restaurants.sample
     @suggestion_forms = []
-    10.times { @suggestion_forms << SuggestionForm.new(event: events.sample, restaurant: restaurants.sample) }
+    10.times { |num| @suggestion_forms << SuggestionForm.new(event: events.sample, restaurant: restaurants.sample, id: num) }
   end
 
   def update

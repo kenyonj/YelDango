@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
 
   def self.get_events(city, state)
     events = []
-    10.times { events << new(name: "MOVIE", location: "THEATER", time: "SHOWTIME") }
+    10.times { |num| events << new(name: "MOVIE#{num}", location: "THEATER", time: "SHOWTIME") }
     events
   end
 

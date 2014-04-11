@@ -7,7 +7,7 @@ class Restaurant < ActiveRecord::Base
 
    def self.get_restaurants(city,state, term='dinner')
      result = []
-     10.times {result << new(name: "RESTAURANT", rating: 4.0 ) }
+     10.times { |num| result << new(name: "RESTAURANT#{num}", rating: 4.0 ) }
      result
      # yelp_profiles = yelp_request(city, state, term='dinner')
      # parse_yelp_profiles(yelp_profiles)

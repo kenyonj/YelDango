@@ -1,6 +1,7 @@
 class SuggestionFormsController < ApplicationController
   def create
     suggestion_form = SuggestionForm.new(suggestion_form_params)
+    @suggestion_form_id = params[:suggestion_form][:id]
     suggestion_form.persist!
   end
 

@@ -9,7 +9,8 @@ class SuggestionForm
     :event_time,
     :restaurant_name,
     :restaurant_rating,
-    :response
+    :response,
+    :id
   )
 
   def persist!

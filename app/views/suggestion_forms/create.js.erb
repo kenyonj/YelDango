@@ -1,5 +1,4 @@
 $(function(){
-  $(".yes-button").click(function () {
-    // $(".new_suggestion_form").next(".new_suggestion_form").show().prev(".new_suggestion_form").hide();
-  });
+  $("#suggestion_form_<%= @suggestion_form_id %>").hide();
+  $("#suggestion_form_<%= @suggestion_form_id.to_i + 1 %>").show();
 });
