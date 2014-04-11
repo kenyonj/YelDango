@@ -2,7 +2,6 @@ class SuggestionFormsController < ApplicationController
   def create
     suggestion_form = SuggestionForm.new(suggestion_form_params)
     suggestion_form.persist!
-    redirect_to root_path
   end
 
   private

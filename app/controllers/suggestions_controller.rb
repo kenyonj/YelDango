@@ -7,7 +7,8 @@ class SuggestionsController < ApplicationController
     restaurants = Restaurant.get_restaurants(city, state)
     @event = events.sample
     @restaurant = restaurants.sample
-    @suggestion_form = SuggestionForm.new
+    @suggestion_forms = []
+    10.times { @suggestion_forms << SuggestionForm.new(event: events.sample, restaurant: restaurants.sample) }
   end
 
   def update

@@ -2,10 +2,15 @@ class Restaurant < ActiveRecord::Base
    include Yelp::V1::Review::Request
    has_many :suggestions
 
+   validates :name, presence: true, uniqueness: true
+   validates :rating, presence: true
 
    def self.get_restaurants(city,state, term='dinner')
-     yelp_profiles = yelp_request(city, state, term='dinner')
-     parse_yelp_profiles(yelp_profiles)
+     result = []
+     10.times {result << new(name: "RESTAURANT", rating: 4.0 ) }
+     result
+     # yelp_profiles = yelp_request(city, state, term='dinner')
+     # parse_yelp_profiles(yelp_profiles)
    end
   
   def self.yelp_request(city,state,term='dinner')

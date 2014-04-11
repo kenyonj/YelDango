@@ -1,26 +1,17 @@
 <div>
   Hello, your event suggestion is:
-  <%= @event.name %> at 
-  <%= @event.time %> located at 
+  <%= @event.name %> at
+  <%= @event.time %> located at
   <%= @event.location %>
 
   <br>
-  And your dinner suggestion is: 
+  And your dinner suggestion is:
   <%= @restaurant.name %> with a Yelp rating of <%= @restaurant.rating.to_f %>
 
   <br>
   Do you want to book this suggestions? <br>
-  <%= form_for @suggestion_form do |f| %>
-    <%= f.hidden_field :event_name, value: @event.name %>
-    <%= f.hidden_field :event_location, value: @event.location %>
-    <%= f.hidden_field :event_time, value: @event.time %>
-    <%= f.hidden_field :restaurant_name, value: @restaurant.name %>
-    <%= f.hidden_field :restaurant_rating, value: @restaurant.rating %>
-    <%= f.label "Yes" %>
-    <%= f.radio_button :response, true, checked: true %>
-    <%= f.label "No, Show Me Another" %>
-    <%= f.radio_button :response, false, checked: false %>
-    <%= f.submit "Submit" %>
-  <% end %>
+
+  <button class="toggleThis">button to toggle</button>
+  <%= render @suggestion_forms %>
 
 </div>
