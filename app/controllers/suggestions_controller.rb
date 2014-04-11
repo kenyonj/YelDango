@@ -7,7 +7,7 @@ class SuggestionsController < ApplicationController
     restaurants = Restaurant.get_restaurants(city, state)
     @event = events.sample
     @restaurant = restaurants.sample
-    @suggestion = Suggestion.create(event: @event, restaurant: @restaurant)
+    @suggestion_form = SuggestionForm.new
   end
 
   def update
