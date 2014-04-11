@@ -1,14 +1,7 @@
 class SuggestionsController < ApplicationController
 
   def new
-    city = session[:city]
-    state = session[:state]
-    events = Event.get_events(city, state)
-    restaurants = Restaurant.get_restaurants(city, state)
-    @event = events.sample
-    @restaurant = restaurants.sample
-    @suggestion_forms = []
-    10.times { |num| @suggestion_forms << SuggestionForm.new(event: events.sample, restaurant: restaurants.sample, id: num) }
+    @suggestion_forms = some_method_that_is_named_better_than_this
   end
 
   def update
@@ -28,5 +21,13 @@ class SuggestionsController < ApplicationController
 
   def find_suggestion
     Suggestion.find(params[:id])
+  end
+
+  def some_method_that_is_named_better_than_this
+    city = session[:city]
+    state = session[:state]
+    events = Event.get_events(city, state)
+    restaurants = Restaurant.get_restaurants(city, state)
+    10.times.map { |num| @suggestion_forms << SuggestionForm.new(event: events.sample, restaurant: restaurants.sample, id: num) }
   end
 end
