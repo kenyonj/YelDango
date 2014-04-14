@@ -1,6 +1,7 @@
 class SuggestionsController < ApplicationController
 
   def new
+    @suggestion_forms = []
     @suggestion_forms = some_method_that_is_named_better_than_this
   end
 
